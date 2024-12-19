@@ -50,6 +50,10 @@
         ;; For proper reloading of code in REPL
         io.github.tonsky/clj-reload {:mvn/version "0.7.1"}
 
+        br.dev.zz/pedestal-container-tests {:git/url   "https://github.com/souenzzo/pedestal.jdk-httpserver"
+                                            :deps/root "pedestal-container-tests"
+                                            :git/sha   "82bc041f68abb44b6fd0eb6ac319cd146c4924c5"}
+
         io.github.cognitect-labs/test-runner
         {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
 
@@ -72,10 +76,7 @@
   :1.10
   {:override-deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
   :pedestal-container-tests
-  {:extra-deps {br.dev.zz/pedestal-container-tests {:git/url   "https://github.com/souenzzo/pedestal.jdk-httpserver"
-                                                    :deps/root "pedestal-container-tests"
-                                                    :git/sha   "82bc041f68abb44b6fd0eb6ac319cd146c4924c5"}}
-   :jvm-opts   ["-Dbr.dev.zz.pedestal-container-tests.type=:jetty"]
+  {:jvm-opts   ["-Dbr.dev.zz.pedestal-container-tests.type=:jetty"]
    :main-opts  ["-m" "br.dev.zz.pedestal-container-tests.runner"]}
 
   ;; clj -X:test
