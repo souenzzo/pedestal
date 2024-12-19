@@ -71,6 +71,12 @@
 
   :1.10
   {:override-deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
+  :pedestal-container-tests
+  {:extra-deps {br.dev.zz/pedestal-container-tests {:git/url   "https://github.com/souenzzo/pedestal.jdk-httpserver"
+                                                    :deps/root "pedestal-container-tests"
+                                                    :git/sha   "82bc041f68abb44b6fd0eb6ac319cd146c4924c5"}}
+   :jvm-opts   ["-Dbr.dev.zz.pedestal-container-tests.type=:jetty"]
+   :main-opts  ["-m" "br.dev.zz.pedestal-container-tests.runner"]}
 
   ;; clj -X:test
   :test
